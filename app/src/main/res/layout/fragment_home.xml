@@ -7,7 +7,7 @@
     tools:context="com.dicoding.MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_tourism"
+        android:id="@+id/rv_saham"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/item_list_saham" />

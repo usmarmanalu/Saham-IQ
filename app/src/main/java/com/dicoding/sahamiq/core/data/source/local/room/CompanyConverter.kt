@@ -4,7 +4,7 @@ import com.dicoding.sahamiq.core.data.source.local.entity.CompanyEntity
 import androidx.room.TypeConverter
 import com.google.gson.Gson
 
-class DatabaseConverter {
+class CompanyConverter {
 
     @TypeConverter
     fun fromCompany(company: CompanyEntity?): String? {

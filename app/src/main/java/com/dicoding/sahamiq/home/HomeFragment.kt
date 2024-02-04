@@ -71,7 +71,7 @@ class HomeFragment : Fragment() {
                 }
             }
 
-            with(binding.rvTourism) {
+            with(binding.rvSaham) {
                 layoutManager = LinearLayoutManager(context)
                 setHasFixedSize(true)
                 adapter = sahamAdapter

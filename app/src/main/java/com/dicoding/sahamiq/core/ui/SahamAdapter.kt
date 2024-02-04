@@ -28,12 +28,12 @@ class SahamAdapter : RecyclerView.Adapter<ListViewHolder>() {
 
         fun bind(data: Saham) {
             with(binding) {
-                ivItemImage.load(data.company.logo) {
+                ivLogo.load(data.company.logo) {
                     crossfade(true)
                 }
 
-                tvItemTitle.text = data.company.symbol
-                tvItemSubtitle.text = data.company.name
+                tvSymbol.text = data.company.symbol
+                tvName.text = data.company.name
             }
         }
 

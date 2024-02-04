@@ -56,7 +56,7 @@ class FavoriteFragment : Fragment() {
                     if (dataSaham.isNotEmpty()) View.GONE else View.VISIBLE
             }
 
-            with(binding.rvTourism) {
+            with(binding.rvSaham) {
                 layoutManager = LinearLayoutManager(context)
                 setHasFixedSize(true)
                 adapter = sahamAdapter

@@ -31,6 +31,7 @@ class DetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val detailSaham = intent.getParcelableExtra<Saham>(EXTRA_DATA)
         showDetailSaham(detailSaham)
@@ -38,10 +39,10 @@ class DetailActivity : AppCompatActivity() {
 
     private fun showDetailSaham(detailSaham: Saham?) {
         detailSaham?.let {
-            supportActionBar?.title = detailSaham.company.name
-            binding.content.tvDetailDescription.text = detailSaham.company.symbol
+            supportActionBar?.title = detailSaham.company.symbol
+            binding.content.tvDetailSaham.text = detailSaham.company.name
 
-            binding.ivDetailImage.load(detailSaham.company.logo) {
+            binding.ivDetailLogo.load(detailSaham.company.logo) {
                 crossfade(true)
 
                 var statusFavorite = detailSaham.isFavorite
@@ -71,6 +72,11 @@ class DetailActivity : AppCompatActivity() {
                 )
             )
         }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressedDispatcher.onBackPressed()
+        return true
     }
 
     companion object {
