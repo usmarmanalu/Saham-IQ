@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Saham IQ</string>
+
+    <string name="hello_blank_fragment_home">Hello blank fragment home</string>
+    <string name="hello_blank_fragment_fav">Hello blank fragment fav</string>
+
+    <string name="home">Home</string>
+    <string name="favorite">Favorite</string>
+
+    <string name="something_wrong">Something wrong</string>
+    <string name="no_data">No Data</string>
+    <string name="image_desc">Image</string>
+    <string name="text_subtitle">Sample of subtitle text</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="menu_favorite">Favorite</string>
+
+
+    <string name="title_activity_detail_home">DetailHomeActivity</string>
+    <string name="search_hint">search</string>
+    <string name="searchbar_hint">Searchbar</string>
+    <string name="image_description">image_description</string>
+</resources>
