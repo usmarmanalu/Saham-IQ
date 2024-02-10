@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Stock IQ</string>
+
+    <string name="home">Home</string>
+    <string name="favorite">Favorite</string>
+
+    <string name="something_wrong">Something wrong</string>
+    <string name="no_data">No Data</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="menu_favorite">Favorite</string>
+
+    <string name="title_activity_detail_home">DetailHomeActivity</string>
+    <string name="search_hint">search</string>
+    <string name="searchbar_hint">Searchbar</string>
+    <string name="image_description">image_description</string>
+
+    <string name="close_text">Close: %1$s</string>
+    <string name="change_text">Change: %1$s</string>
+    <string name="percent_text">Percent: %1$s</string>
+    <string name="percent_ratio">%</string>
+    <string name="dollar_currency">$</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="setting">Setting</string>
+
+    <string name="pref_dark_follow_system" translatable="false">follow_system</string>
+    <string name="pref_key_dark" translatable="false">key_dark_mode</string>
+    <string name="pref_dark_title">Dark Mode</string>
+
+    <string name="dark_mode_auto">Automatic</string>
+    <string name="dark_mode_on">Dark mode</string>
+    <string name="dark_mode_off">Light mode</string>
+
+    <string name="pref_dark_on" translatable="false">on</string>
+    <string name="pref_dark_off" translatable="false">off</string>
+
+    <string name="indonesian_language">Indonesian</string>
+    <string name="english_language">English</string>
+
+    <string name="language_value_in">in</string>
+    <string name="language_value_en">en</string>
+
+
+    <string name="pref_lang_follow_system" translatable="false">follow_system</string>
+    <string name="pref_key_language" translatable="false">key_language</string>
+    <string name="pref_language_title">Language</string>
+
+    <string name="search">Search</string>
+
+
+</resources>

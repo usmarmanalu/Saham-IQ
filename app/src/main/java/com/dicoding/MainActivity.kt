@@ -1,5 +1,7 @@
 package com.dicoding
 
+import android.content.*
+import android.net.*
 import android.os.*
 import android.view.*
 import androidx.appcompat.app.*
@@ -7,8 +9,8 @@ import androidx.core.view.*
 import androidx.fragment.app.*
 import com.dicoding.sahamiq.*
 import com.dicoding.sahamiq.databinding.*
-import com.dicoding.sahamiq.favorite.*
 import com.dicoding.sahamiq.home.*
+import com.dicoding.sahamiq.settings.*
 import com.google.android.material.navigation.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
@@ -44,15 +46,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         var fragment: Fragment? = null
-        var title = getString(R.string.app_name)
+        val title = getString(R.string.app_name)
         when (item.itemId) {
             R.id.nav_home -> {
                 fragment = HomeFragment()
             }
 
             R.id.nav_favorite -> {
-                fragment = FavoriteFragment()
-                title = getString(R.string.menu_favorite)
+                val uri = Uri.parse("sahamiq://favorite")
+                startActivity(Intent(Intent.ACTION_VIEW, uri))
             }
         }
         if (fragment != null) {
@@ -64,5 +66,23 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         binding.drawerLayout.closeDrawer(GravityCompat.START)
         return true
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_main, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.settings -> {
+                val intent = Intent(this, SettingsActivity::class.java)
+                startActivity(intent)
+                true
+            }
+
+
+            else -> super.onOptionsItemSelected(item)
+        }
     }
 }

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Saham IQ</string>
+
+    <string name="home">Beranda</string>
+    <string name="favorite">Favorit</string>
+
+    <string name="something_wrong">Ada kesalahan</string>
+    <string name="no_data">Tidak ada data</string>
+
+    <string name="navigation_drawer_open">Buka laci navigasi</string>
+    <string name="navigation_drawer_close">Tutup laci navigasi</string>
+
+    <string name="menu_favorite">Favorit</string>
+
+    <string name="title_activity_detail_home">Detail Aktivitas Beranda</string>
+    <string name="search_hint">cari</string>
+    <string name="searchbar_hint">Pencarian</string>
+    <string name="image_description">deskripsi gambar</string>
+
+    <string name="close_text">Tutup: %1$s</string>
+    <string name="change_text">Perubahan: %1$s</string>
+    <string name="percent_text">Persentase: %1$s</string>
+    <string name="percent_ratio">%</string>
+    <string name="dollar_currency">$</string>
+    <string name="title_favorite">Favorit</string>
+    <string name="setting">Pengaturan</string>
+
+    <string name="pref_dark_follow_system" translatable="false">ikuti_sistem</string>
+    <string name="pref_key_dark" translatable="false">kunci_mode_gelap</string>
+    <string name="pref_dark_title">Mode Gelap</string>
+
+    <string name="dark_mode_auto">Otomatis</string>
+    <string name="dark_mode_on">Mode gelap</string>
+    <string name="dark_mode_off">Mode terang</string>
+
+    <string name="pref_dark_on" translatable="false">hidup</string>
+    <string name="pref_dark_off" translatable="false">mati</string>
+
+    <string name="indonesian_language">Indonesia</string>
+    <string name="english_language">Inggris</string>
+
+    <string name="language_value_in">id</string>
+    <string name="language_value_en">en</string>
+
+
+    <string name="pref_lang_follow_system" translatable="false">ikuti_sistem</string>
+    <string name="pref_key_language" translatable="false">kunci_bahasa</string>
+    <string name="pref_language_title">Bahasa</string>
+
+    <string name="search">Mencari</string>
+
+
+</resources>

@@ -1,12 +1,17 @@
 package com.dicoding.sahamiq.di
 
 import com.dicoding.sahamiq.core.domain.usecase.*
-import dagger.Binds
-import dagger.Module
+import com.dicoding.sahamiq.detail.*
+import com.dicoding.sahamiq.home.*
+import org.koin.androidx.viewmodel.dsl.*
+import org.koin.dsl.*
 
-@Module
-abstract class AppModule {
 
-    @Binds
-    abstract fun provideSahamUseCase(sahamInteractor: SahamInteractor): SahamUseCase
+val useCaseModule = module {
+    factory<SahamUseCase> { SahamInteractor(get()) }
+}
+
+val viewModelModule = module {
+    viewModel { HomeViewModel(get()) }
+    viewModel { DetailViewModel(get()) }
 }

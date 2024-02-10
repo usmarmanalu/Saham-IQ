@@ -10,8 +10,12 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        maven (uri("https://jitpack.io"))
+
     }
 }
 
 rootProject.name = "Saham IQ"
 include(":app")
+include(":core")
+include(":favorite")

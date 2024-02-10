@@ -9,12 +9,54 @@
     android:layout_marginTop="16dp"
     tools:showIn="@layout/activity_detail">
 
-    <TextView
-        android:id="@+id/tv_detail_saham"
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="18sp"
-        android:layout_margin="@dimen/text_margin"
-        android:text="@string/text_subtitle" />
+        android:layout_margin="@dimen/text_margin">
+
+        <TextView
+            android:id="@+id/tv_detail_saham"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textAlignment="center"
+            android:text="@string/text_subtitle" />
+
+        <com.github.mikephil.charting.charts.BarChart
+            android:id="@+id/chart_saham"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:minHeight="300dp"
+            android:layout_below="@+id/tv_detail_saham"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_detail_saham"/>
+
+        <TextView
+            android:id="@+id/tv_close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/close_text"
+            android:layout_below="@+id/chart_saham"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:id="@+id/tv_change"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/change_text"
+            android:layout_below="@+id/tv_close"
+            android:layout_marginTop="16dp"/>
+
+        <TextView
+            android:id="@+id/tv_percent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/percent_text"
+            android:layout_below="@+id/tv_change"
+            android:layout_marginTop="16dp"/>
+    </RelativeLayout>
 
 </androidx.core.widget.NestedScrollView>

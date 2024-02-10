@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="image_desc">Gambar</string>
+    <string name="text_primary">Contoh simbol</string>
+    <string name="text_subtitle">PT. %1$s</string>
+</resources>

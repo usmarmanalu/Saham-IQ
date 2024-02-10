@@ -10,8 +10,9 @@
             android:title="@string/home" />
         <item
             android:id="@+id/nav_favorite"
-            android:icon="@drawable/baseline_favorite_24"
+            android:icon="@drawable/bookmark"
             android:title="@string/favorite" />
 
     </group>
+
 </menu>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ListPreference
+        app:defaultValue="@string/pref_dark_follow_system"
+        app:entries="@array/dark_mode"
+        app:entryValues="@array/dark_mode_value"
+        app:key="@string/pref_key_dark"
+        app:title="@string/pref_dark_title"
+        app:useSimpleSummaryProvider="true" />
+
+    <ListPreference
+        app:defaultValue="@string/pref_lang_follow_system"
+        app:entries="@array/languages"
+        app:entryValues="@array/language_values"
+        app:key="@string/pref_key_language"
+        app:title="@string/pref_language_title"
+        app:useSimpleSummaryProvider="true" />
+
+
+</PreferenceScreen>
