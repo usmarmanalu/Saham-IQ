@@ -3,6 +3,7 @@ package com.dicoding.sahamiq.di
 import com.dicoding.sahamiq.core.domain.usecase.*
 import com.dicoding.sahamiq.detail.*
 import com.dicoding.sahamiq.home.*
+import com.dicoding.sahamiq.news.*
 import org.koin.androidx.viewmodel.dsl.*
 import org.koin.dsl.*
 
@@ -14,4 +15,5 @@ val useCaseModule = module {
 val viewModelModule = module {
     viewModel { HomeViewModel(get()) }
     viewModel { DetailViewModel(get()) }
+    viewModel { NewsViewModel(get()) }
 }

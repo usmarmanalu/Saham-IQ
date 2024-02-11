@@ -14,4 +14,6 @@ class SahamInteractor constructor(
     override fun setFavoriteSaham(saham: Saham, state: Boolean) =
         sahamRepository.setFavoriteSahamTrending(saham, state)
 
+    override fun getAllNews() = sahamRepository.getAllNews()
+
 }

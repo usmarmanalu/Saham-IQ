@@ -10,6 +10,7 @@ import androidx.fragment.app.*
 import com.dicoding.sahamiq.*
 import com.dicoding.sahamiq.databinding.*
 import com.dicoding.sahamiq.home.*
+import com.dicoding.sahamiq.news.*
 import com.dicoding.sahamiq.settings.*
 import com.google.android.material.navigation.*
 
@@ -46,10 +47,15 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
         var fragment: Fragment? = null
-        val title = getString(R.string.app_name)
+        var title = getString(R.string.app_name)
         when (item.itemId) {
             R.id.nav_home -> {
                 fragment = HomeFragment()
+            }
+
+            R.id.nav_news -> {
+                fragment = NewsFragment()
+                title = getString(R.string.investment_stock_news)
             }
 
             R.id.nav_favorite -> {
@@ -80,7 +86,6 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
                 startActivity(intent)
                 true
             }
-
 
             else -> super.onOptionsItemSelected(item)
         }

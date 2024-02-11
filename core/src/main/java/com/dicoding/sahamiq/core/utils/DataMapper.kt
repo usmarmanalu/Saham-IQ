@@ -40,6 +40,16 @@ object DataMapper {
             isFavorite = input.isFavorite ?: false
         )
 
+    fun mapToResultsItemResponse(dataSaham: ResultsItemResponse): ResultsItemResponse {
+        return dataSaham.copy(
+            symbol = dataSaham.symbol,
+            change = dataSaham.change,
+            company = dataSaham.company,
+            close = dataSaham.close,
+            percent = dataSaham.percent,
+        )
+    }
+
     private fun mapCompanyToDomain(companyResponse: CompanyResponse?): CompanyEntity {
         return CompanyEntity(
             symbol = companyResponse?.symbol.orEmpty(),

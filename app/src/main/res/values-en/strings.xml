@@ -50,5 +50,9 @@
 
     <string name="search">Search</string>
 
+    <string name="news">News</string>
+    <string name="investment_stock_news">Investment &amp; Stock News</string>
+
+
 
 </resources>

@@ -17,6 +17,7 @@ class SahamTrendingRepository constructor(
 
     override fun getAllSahamTrending(): Flow<Resource<List<Saham>>> =
         object : NetworkBoundResource<List<Saham>, List<ResultsItemResponse>>() {
+
             override fun loadFromDB(): Flow<List<Saham>> =
                 localDataSource.getAllSaham().map {
                     DataMapper.mapEntitiesToDomain(it)
@@ -46,4 +47,8 @@ class SahamTrendingRepository constructor(
             localDataSource.setFavoriteSaham(sahamEntity, state)
         }
     }
+
+    override fun getAllNews(): Flow<ApiResponse<List<ResultsItem>>> =
+        remoteDataSource.getNews()
+
 }

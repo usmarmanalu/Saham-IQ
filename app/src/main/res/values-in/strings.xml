@@ -50,5 +50,9 @@
 
     <string name="search">Mencari</string>
 
+    <string name="news">Berita</string>
+    <string name="investment_stock_news">Berita Investasi &amp; Saham</string>
+
+
 
 </resources>
