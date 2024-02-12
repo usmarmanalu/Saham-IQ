@@ -12,15 +12,14 @@ import org.koin.androidx.viewmodel.ext.android.*
 class NewsFragment : Fragment() {
 
     private val newsViewModel: NewsViewModel by viewModel()
-    private var _binding: FragmentNewsBinding? = null
-    private val binding get() = _binding!!
+    private lateinit var binding: FragmentNewsBinding
     private val newsAdapter: NewsAdapter by lazy { NewsAdapter() }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentNewsBinding.inflate(inflater, container, false)
+        binding = FragmentNewsBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -46,22 +45,16 @@ class NewsFragment : Fragment() {
                 is ApiResponse.Empty -> {
                     binding.progressBar.visibility = View.VISIBLE
                 }
+
                 is ApiResponse.Success -> {
                     binding.progressBar.visibility = View.GONE
                     newsAdapter.setData(resource.data)
                 }
+
                 is ApiResponse.Error -> {
                     binding.progressBar.visibility = View.GONE
-                    binding.viewError.root.visibility = View.VISIBLE
-                    binding.viewError.tvError.text =
-                        resource.errorMessage
                 }
             }
         }
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        _binding = null
     }
 }

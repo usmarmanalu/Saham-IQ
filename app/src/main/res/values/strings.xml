@@ -14,8 +14,6 @@
 
 
     <string name="title_activity_detail_home">DetailHomeActivity</string>
-    <string name="search_hint">search</string>
-    <string name="searchbar_hint">Searchbar</string>
     <string name="image_description">image_description</string>
 
 
@@ -48,8 +46,6 @@
     <string name="pref_lang_follow_system" translatable="false">follow_system</string>
     <string name="pref_key_language" translatable="false">key_language</string>
     <string name="pref_language_title">Language</string>
-
-    <string name="search">Search</string>
 
     <string name="news">News</string>
 

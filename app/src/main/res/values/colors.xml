@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
     <color name="grey_200">#7077A1</color>
     <color name="grey_500">#424769</color>
-    <color name="grey_700">#2D3250</color>
 
     <color name="pink_200">#2E8A99</color>
     <color name="pink_500">#1F6E8C</color>
-    <color name="pink_700">#0E2954</color>
 
-    <color name="blue">#1206bf</color>
-    <color name="red">#e30d09</color>
-    <color name="green">#40de1d</color>
 </resources>

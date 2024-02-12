@@ -8,12 +8,17 @@ import com.dicoding.sahamiq.core.utils.DataMapper.mapToResultsItemResponse
 import kotlinx.coroutines.*
 import kotlinx.coroutines.flow.*
 
-class RemoteDataSource constructor(private val apiService: ApiService) {
+class RemoteDataSource constructor(
+    private val apiService: ApiService,
+    private val ioDispatcher: CoroutineDispatcher = Dispatchers.IO
+) {
 
     suspend fun getAllSaham(): Flow<ApiResponse<List<ResultsItemResponse>>> {
         return flow {
             try {
-                val response = apiService.getList(BuildConfig.TOKEN)
+                val response = withContext(ioDispatcher) {
+                    apiService.getList(BuildConfig.TOKEN)
+                }
                 val data = response.data?.results
                 if (!data.isNullOrEmpty()) {
                     val mappedData = data.map { mapToResultsItemResponse(it) }
@@ -25,14 +30,16 @@ class RemoteDataSource constructor(private val apiService: ApiService) {
                 emit(ApiResponse.Error(e.toString()))
                 Log.e("RemoteDataSource", e.toString())
             }
-        }.flowOn(Dispatchers.IO)
+        }.flowOn(ioDispatcher)
     }
 
 
-     fun getNews(): Flow<ApiResponse<List<ResultsItem>>> {
+    fun getNews(): Flow<ApiResponse<List<ResultsItem>>> {
         return flow {
             try {
-                val response = apiService.getNews(BuildConfig.TOKEN)
+                val response = withContext(ioDispatcher) {
+                    apiService.getNews(BuildConfig.TOKEN)
+                }
                 val data = response.data?.results
                 if (data != null) {
                     emit(ApiResponse.Success(data))
@@ -43,6 +50,6 @@ class RemoteDataSource constructor(private val apiService: ApiService) {
                 emit(ApiResponse.Error(e.toString()))
                 Log.e("RemoteDataSource", e.toString())
             }
-        }.flowOn(Dispatchers.IO)
+        }.flowOn(ioDispatcher)
     }
 }

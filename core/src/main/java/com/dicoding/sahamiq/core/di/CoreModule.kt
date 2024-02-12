@@ -1,6 +1,7 @@
 package com.dicoding.sahamiq.core.di
 
 import androidx.room.*
+import com.dicoding.sahamiq.core.*
 import com.dicoding.sahamiq.core.data.source.*
 import com.dicoding.sahamiq.core.data.source.local.*
 import com.dicoding.sahamiq.core.data.source.local.room.*
@@ -20,26 +21,28 @@ val databaseModule = module {
     factory { get<SahamTrendingDatabase>().sahamTrendingDao() }
     single {
         Room.databaseBuilder(
-            androidContext(),
-            SahamTrendingDatabase::class.java, "Saham.db"
+            androidContext(), SahamTrendingDatabase::class.java, "Saham.db"
         ).fallbackToDestructiveMigration().build()
     }
 }
 
 val networkModule = module {
     single {
+        val loggingInterceptor = if (BuildConfig.DEBUG) {
+            HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY)
+        } else {
+            HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.NONE)
+        }
         OkHttpClient.Builder()
-            .addInterceptor(HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY))
+            .addInterceptor(loggingInterceptor)
             .connectTimeout(120, TimeUnit.SECONDS)
             .readTimeout(120, TimeUnit.SECONDS)
             .build()
     }
+
     single {
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://api.goapi.io/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .client(get())
-            .build()
+        val retrofit = Retrofit.Builder().baseUrl("https://api.goapi.io/")
+            .addConverterFactory(GsonConverterFactory.create()).client(get()).build()
         retrofit.create(ApiService::class.java)
     }
 }

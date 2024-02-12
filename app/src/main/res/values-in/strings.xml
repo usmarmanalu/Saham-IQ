@@ -14,8 +14,6 @@
     <string name="menu_favorite">Favorit</string>
 
     <string name="title_activity_detail_home">Detail Aktivitas Beranda</string>
-    <string name="search_hint">cari</string>
-    <string name="searchbar_hint">Pencarian</string>
     <string name="image_description">deskripsi gambar</string>
 
     <string name="close_text">Tutup: %1$s</string>
@@ -47,8 +45,6 @@
     <string name="pref_lang_follow_system" translatable="false">ikuti_sistem</string>
     <string name="pref_key_language" translatable="false">kunci_bahasa</string>
     <string name="pref_language_title">Bahasa</string>
-
-    <string name="search">Mencari</string>
 
     <string name="news">Berita</string>
     <string name="investment_stock_news">Berita Investasi &amp; Saham</string>

@@ -9,7 +9,6 @@ import coil.*
 import com.dicoding.sahamiq.core.*
 import com.dicoding.sahamiq.core.data.source.remote.response.*
 import com.dicoding.sahamiq.core.databinding.*
-import com.dicoding.sahamiq.core.domain.model.*
 
 class NewsAdapter : RecyclerView.Adapter<NewsAdapter.ListViewHolder>() {
 
